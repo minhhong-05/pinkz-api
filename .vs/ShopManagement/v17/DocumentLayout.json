@@ -3,12 +3,12 @@
   "WorkspaceRootPath": "D:\\CNPM\\backend\\ShopManagement\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|d:\\cnpm\\backend\\shopmanagement\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|d:\\cnpm\\backend\\shopmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|d:\\cnpm\\backend\\shopmanagement\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|d:\\cnpm\\backend\\shopmanagement\\shopmanagement.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
@@ -210,11 +210,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Dockerfile",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Dockerfile",
               "RelativeDocumentMoniker": "Dockerfile",
@@ -227,18 +227,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "IAuthServices.cs",
-              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Interfaces\\IAuthServices.cs",
-              "RelativeDocumentMoniker": "BLL\\Interfaces\\IAuthServices.cs",
-              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Interfaces\\IAuthServices.cs",
-              "RelativeToolTip": "BLL\\Interfaces\\IAuthServices.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T14:28:16.156Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 2,
               "Title": "ShopManagement",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\ShopManagement.csproj",
@@ -246,8 +234,7 @@
               "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\ShopManagement.csproj",
               "RelativeToolTip": "ShopManagement.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-23T06:07:46.527Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T06:07:46.527Z"
             },
             {
               "$type": "Document",
@@ -299,16 +286,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-03T13:50:29.209Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IAuthServices.cs",
+              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Interfaces\\IAuthServices.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\IAuthServices.cs",
+              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Interfaces\\IAuthServices.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\IAuthServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T14:28:16.156Z"
             },
             {
               "$type": "Document",

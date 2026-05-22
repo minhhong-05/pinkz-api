@@ -10,7 +10,6 @@ using ShopManagement.Services;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.WebHost.UseWebRoot("wwwroot");
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>

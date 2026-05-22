@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "D:\\CNPM\\backend\\ShopManagement\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|d:\\cnpm\\backend\\shopmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|d:\\cnpm\\backend\\shopmanagement\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|solutionrelative:dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|d:\\cnpm\\backend\\shopmanagement\\shopmanagement.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
       "RelativeMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|solutionrelative:shopmanagement.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
     },
@@ -29,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|d:\\cnpm\\backend\\shopmanagement\\bll\\services\\notificationservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|solutionrelative:bll\\services\\notificationservices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|d:\\cnpm\\backend\\shopmanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0507C2A9-BB27-41A5-B9F1-BCBC61EC60FB}|ShopManagement.csproj|d:\\cnpm\\backend\\shopmanagement\\shopmanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
@@ -206,35 +210,35 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "IAuthServices.cs",
-              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Interfaces\\IAuthServices.cs",
-              "RelativeDocumentMoniker": "BLL\\Interfaces\\IAuthServices.cs",
-              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Interfaces\\IAuthServices.cs",
-              "RelativeToolTip": "BLL\\Interfaces\\IAuthServices.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T14:28:16.156Z"
+              "DocumentIndex": 1,
+              "Title": "Dockerfile",
+              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Dockerfile",
+              "RelativeDocumentMoniker": "Dockerfile",
+              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\Dockerfile",
+              "RelativeToolTip": "Dockerfile",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2026-05-22T09:28:03.518Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "ShopManagement",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\ShopManagement.csproj",
               "RelativeDocumentMoniker": "ShopManagement.csproj",
               "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\ShopManagement.csproj",
               "RelativeToolTip": "ShopManagement.csproj",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2026-04-23T06:07:46.527Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-23T06:07:46.527Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
               "Title": "CartServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\CartServices.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\CartServices.cs",
@@ -246,7 +250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ProductServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\ProductServices.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\ProductServices.cs",
@@ -258,7 +262,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "ProductController.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\ProductController.cs",
               "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
@@ -270,7 +274,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "AdminDashboardController.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\AdminDashboardController.cs",
               "RelativeDocumentMoniker": "Controllers\\AdminDashboardController.cs",
@@ -282,7 +286,32 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-03T13:50:29.209Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "IAuthServices.cs",
+              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Interfaces\\IAuthServices.cs",
+              "RelativeDocumentMoniker": "BLL\\Interfaces\\IAuthServices.cs",
+              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Interfaces\\IAuthServices.cs",
+              "RelativeToolTip": "BLL\\Interfaces\\IAuthServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-18T14:28:16.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "NotificationServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\NotificationServices.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\NotificationServices.cs",
@@ -294,19 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Program.cs",
-              "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\Program.cs",
-              "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T13:50:29.209Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "ShopManagement.csproj",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\ShopManagement.csproj",
               "RelativeDocumentMoniker": "ShopManagement.csproj",
@@ -318,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "DashboardServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\DashboardServices.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\DashboardServices.cs",
@@ -330,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "ShopManagement.DTOs.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\DTOs\\ShopManagement.DTOs.cs",
               "RelativeDocumentMoniker": "DTOs\\ShopManagement.DTOs.cs",
@@ -342,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "WishlistServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\WishlistServices.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\WishlistServices.cs",
@@ -354,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "AuthServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\AuthServices.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\AuthServices.cs",
@@ -366,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "AuthController.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
@@ -378,7 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "OrderController.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "Controllers\\OrderController.cs",
@@ -390,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "IProductServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Interfaces\\IProductServices.cs",
               "RelativeDocumentMoniker": "BLL\\Interfaces\\IProductServices.cs",
@@ -402,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -414,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "ShopManagement.http",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\ShopManagement.http",
               "RelativeDocumentMoniker": "ShopManagement.http",
@@ -426,7 +443,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "IDashboardServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Interfaces\\IDashboardServices.cs",
               "RelativeDocumentMoniker": "BLL\\Interfaces\\IDashboardServices.cs",
@@ -438,7 +455,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "OrderDetail.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Models\\OrderDetail.cs",
               "RelativeDocumentMoniker": "Models\\OrderDetail.cs",
@@ -450,7 +467,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "Order.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Models\\Order.cs",
               "RelativeDocumentMoniker": "Models\\Order.cs",
@@ -462,7 +479,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "OrderServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\OrderServices.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\OrderServices.cs",
@@ -474,7 +491,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "IOrderServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Interfaces\\IOrderServices.cs",
               "RelativeDocumentMoniker": "BLL\\Interfaces\\IOrderServices.cs",
@@ -486,7 +503,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "CartController.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\CartController.cs",
               "RelativeDocumentMoniker": "Controllers\\CartController.cs",
@@ -498,7 +515,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 26,
               "Title": "IWishlistServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Interfaces\\IWishlistServices.cs",
               "RelativeDocumentMoniker": "BLL\\Interfaces\\IWishlistServices.cs",
@@ -510,7 +527,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 27,
               "Title": "IReviewServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Interfaces\\IReviewServices.cs",
               "RelativeDocumentMoniker": "BLL\\Interfaces\\IReviewServices.cs",
@@ -522,7 +539,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 28,
               "Title": "ReviewServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\ReviewServices.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\ReviewServices.cs",
@@ -534,7 +551,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 25,
               "Title": "WishlistController.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\WishlistController.cs",
               "RelativeDocumentMoniker": "Controllers\\WishlistController.cs",
@@ -546,7 +563,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 29,
               "Title": "ReviewController.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\ReviewController.cs",
               "RelativeDocumentMoniker": "Controllers\\ReviewController.cs",
@@ -558,7 +575,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 33,
               "Title": "CategoryServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\CategoryServices.cs",
               "RelativeDocumentMoniker": "BLL\\Services\\CategoryServices.cs",
@@ -570,7 +587,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 31,
               "Title": "CategoryController.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\CategoryController.cs",
               "RelativeDocumentMoniker": "Controllers\\CategoryController.cs",
@@ -582,7 +599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 30,
               "Title": "NotificationController.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\NotificationController.cs",
               "RelativeDocumentMoniker": "Controllers\\NotificationController.cs",
@@ -594,7 +611,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 32,
               "Title": "Wishlist.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Models\\Wishlist.cs",
               "RelativeDocumentMoniker": "Models\\Wishlist.cs",
@@ -606,7 +623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 35,
               "Title": "ICategoryServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Interfaces\\ICategoryServices.cs",
               "RelativeDocumentMoniker": "BLL\\Interfaces\\ICategoryServices.cs",
@@ -618,7 +635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 36,
               "Title": "ICartServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Interfaces\\ICartServices.cs",
               "RelativeDocumentMoniker": "BLL\\Interfaces\\ICartServices.cs",
@@ -630,7 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 34,
               "Title": "Review.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Models\\Review.cs",
               "RelativeDocumentMoniker": "Models\\Review.cs",
@@ -642,7 +659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 37,
               "Title": "Category.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Models\\Category.cs",
               "RelativeDocumentMoniker": "Models\\Category.cs",
@@ -654,7 +671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 38,
               "Title": "Notification.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Models\\Notification.cs",
               "RelativeDocumentMoniker": "Models\\Notification.cs",
@@ -666,7 +683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 39,
               "Title": "Product.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Models\\Product.cs",
               "RelativeDocumentMoniker": "Models\\Product.cs",
@@ -678,7 +695,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 40,
               "Title": "CartItem.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Models\\CartItem.cs",
               "RelativeDocumentMoniker": "Models\\CartItem.cs",
@@ -690,7 +707,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 41,
               "Title": "Cart.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Models\\Cart.cs",
               "RelativeDocumentMoniker": "Models\\Cart.cs",
@@ -702,7 +719,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 42,
               "Title": "INotificationServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Interfaces\\INotificationServices.cs",
               "RelativeDocumentMoniker": "BLL\\Interfaces\\INotificationServices.cs",
@@ -714,7 +731,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
@@ -726,7 +743,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 46,
               "Title": "NotificationServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Services\\NotificationServices.cs",
               "RelativeDocumentMoniker": "Services\\NotificationServices.cs",
@@ -738,7 +755,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 47,
               "Title": "InteractionServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Services\\InteractionServices.cs",
               "RelativeDocumentMoniker": "Services\\InteractionServices.cs",
@@ -750,7 +767,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 48,
               "Title": "CartServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Services\\CartServices.cs",
               "RelativeDocumentMoniker": "Services\\CartServices.cs",
@@ -762,7 +779,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 49,
               "Title": "AuthServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Services\\AuthServices.cs",
               "RelativeDocumentMoniker": "Services\\AuthServices.cs",
@@ -774,7 +791,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "OrderServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Services\\OrderServices.cs",
               "RelativeDocumentMoniker": "Services\\OrderServices.cs",
@@ -786,7 +803,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "ProductServices.cs",
               "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Services\\ProductServices.cs",
               "RelativeDocumentMoniker": "Services\\ProductServices.cs",
