@@ -206,72 +206,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CartServices.cs",
-              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\CartServices.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\CartServices.cs",
-              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\CartServices.cs",
-              "RelativeToolTip": "BLL\\Services\\CartServices.cs",
-              "ViewState": "AgIAAKcAAAAAAAAAAAAwwLkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T13:08:24.378Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ProductServices.cs",
-              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\ProductServices.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\ProductServices.cs",
-              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\ProductServices.cs",
-              "RelativeToolTip": "BLL\\Services\\ProductServices.cs",
-              "ViewState": "AgIAAIgAAAAAAAAAAAAwwIQAAAAgAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-19T14:41:49.875Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ProductController.cs",
-              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\ProductController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
-              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\ProductController.cs",
-              "RelativeToolTip": "Controllers\\ProductController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T12:11:42.416Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AdminDashboardController.cs",
-              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\AdminDashboardController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AdminDashboardController.cs",
-              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\AdminDashboardController.cs",
-              "RelativeToolTip": "Controllers\\AdminDashboardController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T02:18:08.635Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "NotificationServices.cs",
-              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\NotificationServices.cs",
-              "RelativeDocumentMoniker": "BLL\\Services\\NotificationServices.cs",
-              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\NotificationServices.cs",
-              "RelativeToolTip": "BLL\\Services\\NotificationServices.cs",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAYwEsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-20T04:06:05.947Z"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 5,
@@ -282,8 +218,7 @@
               "RelativeToolTip": "BLL\\Interfaces\\IAuthServices.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-18T14:28:16.156Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-18T14:28:16.156Z"
             },
             {
               "$type": "Document",
@@ -296,6 +231,66 @@
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2026-04-23T06:07:46.527Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CartServices.cs",
+              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\CartServices.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\CartServices.cs",
+              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\CartServices.cs",
+              "RelativeToolTip": "BLL\\Services\\CartServices.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAwwLkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T13:08:24.378Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProductServices.cs",
+              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\ProductServices.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\ProductServices.cs",
+              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\ProductServices.cs",
+              "RelativeToolTip": "BLL\\Services\\ProductServices.cs",
+              "ViewState": "AgIAAIgAAAAAAAAAAAAwwIQAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-19T14:41:49.875Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ProductController.cs",
+              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-02T12:11:42.416Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AdminDashboardController.cs",
+              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\AdminDashboardController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AdminDashboardController.cs",
+              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\Controllers\\AdminDashboardController.cs",
+              "RelativeToolTip": "Controllers\\AdminDashboardController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-21T02:18:08.635Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NotificationServices.cs",
+              "DocumentMoniker": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\NotificationServices.cs",
+              "RelativeDocumentMoniker": "BLL\\Services\\NotificationServices.cs",
+              "ToolTip": "D:\\CNPM\\backend\\ShopManagement\\BLL\\Services\\NotificationServices.cs",
+              "RelativeToolTip": "BLL\\Services\\NotificationServices.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAYwEsAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-20T04:06:05.947Z"
             },
             {
               "$type": "Document",
