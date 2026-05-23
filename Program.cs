@@ -65,11 +65,11 @@ var app = builder.Build();
 
 //tạo admin khi khởi động ứng dụng lần đầu (Yêu cầu FR-01)
 
-if (app.Environment.IsDevelopment())
-{
+
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
 
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
