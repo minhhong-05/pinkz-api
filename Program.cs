@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Data.SqlClient;
+using Npgsql;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -64,35 +64,7 @@ builder.Services.AddCors(opt => opt.AddPolicy("AllowAll", p => p.AllowAnyOrigin(
 var app = builder.Build();
 
 //tạo admin khi khởi động ứng dụng lần đầu (Yêu cầu FR-01)
-using (var scope = app.Services.CreateScope())
-{
-    var config = scope.ServiceProvider.GetRequiredService<IConfiguration>();
-    using (SqlConnection conn = new SqlConnection(config.GetConnectionString("DefaultConnection")))
-    {
-        conn.Open();
 
-        string check = "SELECT COUNT(*) FROM Users WHERE Role = 'Admin'";
-        using (SqlCommand cmd = new SqlCommand(check, conn))
-        {
-            int count = (int)cmd.ExecuteScalar();
-            if (count == 0)
-            {
-                string insert = @"INSERT INTO Users (Username, Email, Password, Role, Status)
-                                  VALUES (@Username, @Email, @Password, 'Admin', 1)";
-
-                using (SqlCommand insertCmd = new SqlCommand(insert, conn))
-                {
-                    insertCmd.Parameters.AddWithValue("@Username", "admin");
-                    insertCmd.Parameters.AddWithValue("@Email", "admin@gmail.com");
-                    insertCmd.Parameters.AddWithValue("@Password",
-                        BCrypt.Net.BCrypt.HashPassword("123456"));
-
-                    insertCmd.ExecuteNonQuery();
-                }
-            }
-        }
-    }
-}
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

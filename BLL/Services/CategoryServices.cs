@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Npgsql;
 using ShopManagement.DTOs;
 using ShopManagement.BLL.Interfaces;
 namespace ShopManagement.BLL.Services
@@ -17,13 +17,13 @@ namespace ShopManagement.BLL.Services
         {
             var list = new List<object>();
 
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = "SELECT * FROM Categories";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
-            using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
+            using NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
 
             while (await reader.ReadAsync())
             {
@@ -41,15 +41,15 @@ namespace ShopManagement.BLL.Services
         // ================= GET BY ID =================
         public async Task<object?> GetById(int id)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = "SELECT * FROM Categories WHERE CategoryID = @ID";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@ID", id);
 
-            using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+            using NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
 
             if (await reader.ReadAsync())
             {
@@ -67,14 +67,14 @@ namespace ShopManagement.BLL.Services
         // ================= CREATE =================
         public async Task<string> Create(CategoryDTO dto)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = @"
                 INSERT INTO Categories (CategoryName, Description)
                 VALUES (@Name, @Desc)";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@Name", dto.CategoryName);
             cmd.Parameters.AddWithValue("@Desc", dto.Description ?? "");
 
@@ -86,7 +86,7 @@ namespace ShopManagement.BLL.Services
         // ================= UPDATE =================
         public async Task<string> Update(int id, CategoryDTO dto)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = @"
@@ -95,7 +95,7 @@ namespace ShopManagement.BLL.Services
                     Description = @Desc
                 WHERE CategoryID = @ID";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@Name", dto.CategoryName);
             cmd.Parameters.AddWithValue("@Desc", dto.Description ?? "");
             cmd.Parameters.AddWithValue("@ID", id);
@@ -108,12 +108,12 @@ namespace ShopManagement.BLL.Services
         // ================= DELETE =================
         public async Task<string> Delete(int id)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new   NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = "DELETE FROM Categories WHERE CategoryID = @ID";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@ID", id);
 
             await cmd.ExecuteNonQueryAsync();

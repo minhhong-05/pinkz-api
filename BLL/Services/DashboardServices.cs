@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Npgsql;
 using Microsoft.Extensions.Configuration;
 using ShopManagement.DTOs;
 using ShopManagement.BLL.Interfaces;
@@ -13,35 +13,35 @@ namespace ShopManagement.BLL.Services
         }
         public async Task<DashboardDTO> GetDashboard()
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             var dashboard = new DashboardDTO();
 
             // 1. Tổng doanh thu
             string revenueQuery = "SELECT ISNULL(SUM(TotalAmount),0) FROM Orders WHERE Status = 'Done'";
-            using (SqlCommand cmd = new SqlCommand(revenueQuery, conn))
+            using (NpgsqlCommand cmd = new NpgsqlCommand(revenueQuery, conn))
             {
                 dashboard.TotalRevenue = (decimal)await cmd.ExecuteScalarAsync();
             }
 
             // 2. Tổng đơn
             string orderQuery = "SELECT COUNT(*) FROM Orders";
-            using (SqlCommand cmd = new SqlCommand(orderQuery, conn))
+            using (NpgsqlCommand cmd = new NpgsqlCommand(orderQuery, conn))
             {
                 dashboard.TotalOrders = (int)await cmd.ExecuteScalarAsync();
             }
 
             // 3. Tổng user
             string userQuery = "SELECT COUNT(*) FROM Users";
-            using (SqlCommand cmd = new SqlCommand(userQuery, conn))
+            using (NpgsqlCommand cmd = new NpgsqlCommand(userQuery, conn))
             {
                 dashboard.TotalUsers = (int)await cmd.ExecuteScalarAsync();
             }
 
             // 4. Tổng product
             string productQuery = "SELECT COUNT(*) FROM Products";
-            using (SqlCommand cmd = new SqlCommand(productQuery, conn))
+            using (NpgsqlCommand cmd = new NpgsqlCommand(productQuery, conn))
             {
                 dashboard.TotalProducts = (int)await cmd.ExecuteScalarAsync();
             }
@@ -59,8 +59,8 @@ namespace ShopManagement.BLL.Services
 
             dashboard.RevenueByDays = new List<RevenueByDayDTO>();
 
-            using (SqlCommand cmd = new SqlCommand(chartQuery, conn))
-            using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+            using (NpgsqlCommand cmd = new NpgsqlCommand(chartQuery, conn))
+            using (NpgsqlDataReader reader = await cmd.ExecuteReaderAsync())
             {
                 while (await reader.ReadAsync())
                 {

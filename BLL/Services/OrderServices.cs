@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Npgsql;
 using ShopManagement.BLL.Interfaces;
 using ShopManagement.DTOs;
 namespace ShopManagement.Services
@@ -13,10 +13,10 @@ namespace ShopManagement.Services
         // tạo đơn hàng từ giỏ hàng
         public async Task<string> CreateOrder(int userId)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
-            using SqlTransaction tran = conn.BeginTransaction();
+            using NpgsqlTransaction tran = conn.BeginTransaction();
 
             try
             {
@@ -24,7 +24,7 @@ namespace ShopManagement.Services
                 string getCart = "SELECT CartID FROM Carts WHERE UserID = @UserID";
                 int cartId;
 
-                using (SqlCommand cmd = new SqlCommand(getCart, conn, tran))
+                using (NpgsqlCommand cmd = new NpgsqlCommand(getCart, conn, tran))
                 {
                     cmd.Parameters.AddWithValue("@UserID", userId);
 
@@ -45,11 +45,11 @@ namespace ShopManagement.Services
 
                 var items = new List<(int productId, int qty, decimal price, string size)>();
 
-                using (SqlCommand cmd = new SqlCommand(getItems, conn, tran))
+                using (NpgsqlCommand cmd = new NpgsqlCommand(getItems, conn, tran))
                 {
                     cmd.Parameters.AddWithValue("@CartID", cartId);
 
-                    using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+                    using NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
 
                     while (await reader.ReadAsync())
                     {
@@ -76,7 +76,7 @@ namespace ShopManagement.Services
 
                 int orderId;
 
-                using (SqlCommand cmd = new SqlCommand(insertOrder, conn, tran))
+                using (NpgsqlCommand cmd = new NpgsqlCommand(insertOrder, conn, tran))
                 {
                     cmd.Parameters.AddWithValue("@UserID", userId);
                     cmd.Parameters.AddWithValue("@Total", total);
@@ -91,7 +91,7 @@ namespace ShopManagement.Services
             INSERT INTO OrderDetails (OrderID, ProductID, Quantity, Price, Size)
             VALUES (@OrderID, @ProductID, @Quantity, @Price, @Size)";
 
-                    using SqlCommand cmd = new SqlCommand(insertDetail, conn, tran);
+                    using NpgsqlCommand cmd = new NpgsqlCommand(insertDetail, conn, tran);
 
                     cmd.Parameters.AddWithValue("@OrderID", orderId);
                     cmd.Parameters.AddWithValue("@ProductID", item.productId);
@@ -105,7 +105,7 @@ namespace ShopManagement.Services
                 // 6. clear cart
                 string clear = "DELETE FROM CartItems WHERE CartID = @CartID";
 
-                using (SqlCommand cmd = new SqlCommand(clear, conn, tran))
+                using (NpgsqlCommand cmd = new NpgsqlCommand(clear, conn, tran))
                 {
                     cmd.Parameters.AddWithValue("@CartID", cartId);
                     await cmd.ExecuteNonQueryAsync();
@@ -123,7 +123,7 @@ namespace ShopManagement.Services
         //lấy đơn hàng của user
         public async Task<List<OrderResponse>> GetMyOrders(int userId)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             var orders = new List<OrderResponse>();
@@ -131,11 +131,11 @@ namespace ShopManagement.Services
             // 1. orders
             string queryOrder = "SELECT * FROM Orders WHERE UserID = @UserID ORDER BY CreatedAt DESC";
 
-            using (SqlCommand cmd = new SqlCommand(queryOrder, conn))
+            using (NpgsqlCommand cmd = new NpgsqlCommand(queryOrder, conn))
             {
                 cmd.Parameters.AddWithValue("@UserID", userId);
 
-                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+                using NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
 
                 while (await reader.ReadAsync())
                 {
@@ -158,10 +158,10 @@ namespace ShopManagement.Services
         FROM OrderDetails
         WHERE OrderID = @OrderID";
 
-                using SqlCommand cmd = new SqlCommand(queryDetail, conn);
+                using NpgsqlCommand cmd = new NpgsqlCommand(queryDetail, conn);
                 cmd.Parameters.AddWithValue("@OrderID", order.OrderID);
 
-                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+                using NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
 
                 while (await reader.ReadAsync())
                 {

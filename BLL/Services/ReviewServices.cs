@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Npgsql;
 using ShopManagement.DTOs;
 using ShopManagement.BLL.Interfaces;
 namespace ShopManagement.BLL.Services
@@ -13,7 +13,7 @@ namespace ShopManagement.BLL.Services
         // thêm đánh giá
         public async Task<string> Create(int userId, ReviewDTO dto)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             // insert review
@@ -21,7 +21,7 @@ namespace ShopManagement.BLL.Services
                 INSERT INTO Reviews (UserID, ProductID, Rating, Comment)
                 VALUES (@UserID, @ProductID, @Rating, @Comment)";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@UserID", userId);
             cmd.Parameters.AddWithValue("@ProductID", dto.ProductID);
             cmd.Parameters.AddWithValue("@Rating", dto.Rating);
@@ -36,7 +36,7 @@ namespace ShopManagement.BLL.Services
         {
             var list = new List<object>();
 
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = @"
@@ -46,10 +46,10 @@ namespace ShopManagement.BLL.Services
                 WHERE r.ProductID = @ProductID
                 ORDER BY r.CreatedAt DESC";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@ProductID", productId);
 
-            using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+            using NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
 
             while (await reader.ReadAsync())
             {
@@ -68,12 +68,12 @@ namespace ShopManagement.BLL.Services
         //xoa đánh giá
         public async Task<string> Delete(int reviewId)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = "DELETE FROM Reviews WHERE ReviewID = @ID";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@ID", reviewId);
 
             await cmd.ExecuteNonQueryAsync();

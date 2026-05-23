@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using  Npgsql;
 using ShopManagement.BLL.Interfaces;
 using ShopManagement.DTOs;
 namespace ShopManagement.Services
@@ -14,11 +14,11 @@ namespace ShopManagement.Services
         public async Task<List<object>> GetAll()
         {
             var List  = new List<object>();
-            using SqlConnection sqlConnection = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection sqlConnection = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await sqlConnection.OpenAsync();
             string query = "SELECT * FROM Products WHERE Status = 1";
-            using SqlCommand sqlCommand = new SqlCommand(query, sqlConnection);
-            using SqlDataReader reader = await sqlCommand.ExecuteReaderAsync();
+            using NpgsqlCommand sqlCommand = new NpgsqlCommand(query, sqlConnection);
+            using NpgsqlDataReader reader = await sqlCommand.ExecuteReaderAsync();
             while (await reader.ReadAsync())
             {
                 List.Add(new
@@ -36,15 +36,15 @@ namespace ShopManagement.Services
         // xem chi tiết sản phẩm
         public async Task<object?> GetById(int id)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = "SELECT * FROM Products WHERE ProductID = @Id";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@Id", id);
 
-            using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+            using NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
 
             if (await reader.ReadAsync())
             {
@@ -87,14 +87,14 @@ namespace ShopManagement.Services
                 imageUrl = "/img/" + fileName;
             }
 
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = @"INSERT INTO Products 
     (ProductName, CategoryID, Material, Price, Description, ImageURL, Stock, Status)
     VALUES (@Name, @Cate, @Material, @Price, @Desc, @Img, @Stock, 1)";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
 
             cmd.Parameters.AddWithValue("@Name", dto.ProductName);
             cmd.Parameters.AddWithValue("@Cate", dto.CategoryID);
@@ -111,7 +111,7 @@ namespace ShopManagement.Services
         // cập nhật sản phẩm
         public async Task<string> Update(int id, ProductDTO dto) 
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
             string imageUrl = null;
 
@@ -142,7 +142,7 @@ namespace ShopManagement.Services
             Stock = @Stock
         WHERE ProductID = @Id";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@Name", dto.ProductName);
             cmd.Parameters.AddWithValue("@Cate", dto.CategoryID);
             cmd.Parameters.AddWithValue("@Material", dto.Material);
@@ -158,12 +158,12 @@ namespace ShopManagement.Services
         }
         public async Task<string> Delete(int id)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = "UPDATE Products SET Status = 0 WHERE ProductID = @Id";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@Id", id);
 
             await cmd.ExecuteNonQueryAsync();
@@ -175,7 +175,7 @@ namespace ShopManagement.Services
         {
             var list = new List<object>();
 
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = @"
@@ -183,10 +183,10 @@ namespace ShopManagement.Services
     WHERE Status = 1
     AND ProductName LIKE @Keyword";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@Keyword", "%" + keyword + "%");
 
-            using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+            using NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
 
             while (await reader.ReadAsync())
             {

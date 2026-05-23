@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Npgsql;
 using ShopManagement.BLL.Interfaces;
 
 namespace ShopManagement.Services
@@ -12,14 +12,14 @@ namespace ShopManagement.Services
         }
         public async Task Create(int userId, string title, string content)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = @"
         INSERT INTO Notifications (UserID, Title, Content, IsRead)
         VALUES (@UserID, @Title, @Content, 0)";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@UserID", userId);
             cmd.Parameters.AddWithValue("@Title", title);
             cmd.Parameters.AddWithValue("@Content", content);
@@ -32,7 +32,7 @@ namespace ShopManagement.Services
         {
             var list = new List<object>();
 
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = @"
@@ -41,10 +41,10 @@ namespace ShopManagement.Services
         WHERE UserID = @UserID
         ORDER BY CreatedAt DESC";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@UserID", userId);
 
-            using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+            using NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
 
             while (await reader.ReadAsync())
             {
@@ -64,12 +64,12 @@ namespace ShopManagement.Services
         // ✔ đánh dấu đã đọc
         public async Task MarkAsRead(int id)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = "UPDATE Notifications SET IsRead = 1 WHERE NotificationID = @Id";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@Id", id);
 
             await cmd.ExecuteNonQueryAsync();

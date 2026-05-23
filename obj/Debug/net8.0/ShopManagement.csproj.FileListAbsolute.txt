@@ -155,3 +155,4 @@ D:\CNPM\backend\ShopManagement\obj\Debug\net8.0\refint\ShopManagement.dll
 D:\CNPM\backend\ShopManagement\obj\Debug\net8.0\ShopManagement.pdb
 D:\CNPM\backend\ShopManagement\obj\Debug\net8.0\ShopManagement.genruntimeconfig.cache
 D:\CNPM\backend\ShopManagement\obj\Debug\net8.0\ref\ShopManagement.dll
+D:\CNPM\backend\ShopManagement\bin\Debug\net8.0\Npgsql.dll

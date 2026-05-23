@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
+using Npgsql;
 using Microsoft.IdentityModel.Tokens;
 using ShopManagement.BLL.Interfaces;
 using ShopManagement.DTOs;
@@ -40,13 +40,13 @@ namespace ShopManagement.Services
         public async Task<string> Register(RegisterDTO request)
         {
 
-            using (SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+            using (NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
                 await conn.OpenAsync();
 
                 // Kiểm tra nếu username đã tồn tại
                 string checkUser = "SELECT COUNT(*) FROM Users WHERE Username = @Username OR Email =@Email";
-                using (SqlCommand cmdCheck = new SqlCommand(checkUser, conn))
+                using (NpgsqlCommand cmdCheck = new NpgsqlCommand(checkUser, conn))
                 {
                     cmdCheck.Parameters.AddWithValue("@Username", request.Username);
                     cmdCheck.Parameters.AddWithValue("@Email", request.Email);
@@ -55,7 +55,7 @@ namespace ShopManagement.Services
                        return "Username hoặc Email đã tồn tại";
                 }
                 string insert = "INSERT INTO Users (Username, Email, Password, Role, Status) VALUES (@Username, @Email, @Password, 'Customer', @Status)";
-                using (SqlCommand cmd = new SqlCommand(insert, conn))
+                using (NpgsqlCommand cmd = new NpgsqlCommand(insert, conn))
                 {
                     cmd.Parameters.AddWithValue("@Username", request.Username);
                     cmd.Parameters.AddWithValue("@Email", request.Email);
@@ -72,14 +72,14 @@ namespace ShopManagement.Services
 
         public async Task<object> Login(LoginDto request)
         {
-            using (SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection")))
+            using (NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection")))
             {
                 await conn.OpenAsync();
                 string query = "SELECT * FROM Users WHERE Username = @Input OR Email = @Input";
-                using (SqlCommand cmd = new SqlCommand(query, conn))
+                using (NpgsqlCommand cmd = new NpgsqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@Input", request.UsernameOrEmail);
-                    using (SqlDataReader reader = await cmd.ExecuteReaderAsync())
+                    using (NpgsqlDataReader reader = await cmd.ExecuteReaderAsync())
                     {
                         if (!await reader.ReadAsync())
                             return "Tài khoản không tồn tại";

@@ -1,4 +1,4 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Npgsql;
 using ShopManagement.DTOs;
 using ShopManagement.BLL.Interfaces;
 namespace ShopManagement.BLL.Services
@@ -15,7 +15,7 @@ namespace ShopManagement.BLL.Services
         // ================= ADD =================
         public async Task<string> Add(int userId, WishlistDTO dto)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             // check tồn tại
@@ -24,7 +24,7 @@ namespace ShopManagement.BLL.Services
                 FROM Wishlist 
                 WHERE UserID = @UserID AND ProductID = @ProductID";
 
-            using (SqlCommand cmdCheck = new SqlCommand(check, conn))
+            using (NpgsqlCommand cmdCheck = new NpgsqlCommand(check, conn))
             {
                 cmdCheck.Parameters.AddWithValue("@UserID", userId);
                 cmdCheck.Parameters.AddWithValue("@ProductID", dto.ProductID);
@@ -39,7 +39,7 @@ namespace ShopManagement.BLL.Services
                 INSERT INTO Wishlist (UserID, ProductID)
                 VALUES (@UserID, @ProductID)";
 
-            using SqlCommand cmd = new SqlCommand(insert, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(insert, conn);
             cmd.Parameters.AddWithValue("@UserID", userId);
             cmd.Parameters.AddWithValue("@ProductID", dto.ProductID);
 
@@ -51,14 +51,14 @@ namespace ShopManagement.BLL.Services
         // ================= REMOVE =================
         public async Task<string> Remove(int userId, int productId)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = @"
                 DELETE FROM Wishlist 
                 WHERE UserID = @UserID AND ProductID = @ProductID";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@UserID", userId);
             cmd.Parameters.AddWithValue("@ProductID", productId);
 
@@ -72,7 +72,7 @@ namespace ShopManagement.BLL.Services
         {
             var list = new List<object>();
 
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = @"
@@ -81,10 +81,10 @@ namespace ShopManagement.BLL.Services
                 JOIN Products p ON w.ProductID = p.ProductID
                 WHERE w.UserID = @UserID";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@UserID", userId);
 
-            using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+            using NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
 
             while (await reader.ReadAsync())
             {

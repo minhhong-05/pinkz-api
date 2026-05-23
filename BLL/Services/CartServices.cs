@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Data.SqlClient;
+using Npgsql;
 using Microsoft.Extensions.Configuration;
 using ShopManagement.BLL.Interfaces;
 using ShopManagement.DTOs;
@@ -19,7 +19,7 @@ namespace ShopManagement.Services
             var items = new List<object>();
             decimal total = 0;
 
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = @"
@@ -35,10 +35,10 @@ namespace ShopManagement.Services
                 JOIN Products p ON ci.ProductID = p.ProductID
                 WHERE c.UserID = @UserID AND p.Status = 1";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@UserID", userId);
 
-            using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+            using NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
 
             while (await reader.ReadAsync())
             {
@@ -70,14 +70,14 @@ namespace ShopManagement.Services
         //them vào giỏ hàng
         public async Task<string> AddToCart(AddToCartDto request, int userId)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             int cartId;
 
             // 1. Lấy hoặc tạo Cart
             string getCart = "SELECT CartID FROM Carts WHERE UserID = @UserID";
-            using (SqlCommand cmd = new SqlCommand(getCart, conn))
+            using (NpgsqlCommand cmd = new NpgsqlCommand(getCart, conn))
             {
                 cmd.Parameters.AddWithValue("@UserID", userId);
                 var result = await cmd.ExecuteScalarAsync();
@@ -89,7 +89,7 @@ namespace ShopManagement.Services
                         OUTPUT INSERTED.CartID
                         VALUES (@UserID)";
 
-                    using SqlCommand cmdCreate = new SqlCommand(create, conn);
+                    using NpgsqlCommand cmdCreate = new NpgsqlCommand(create, conn);
                     cmdCreate.Parameters.AddWithValue("@UserID", userId);
                     cartId = (int)await cmdCreate.ExecuteScalarAsync();
                 }
@@ -106,11 +106,11 @@ namespace ShopManagement.Services
             int stock;
             bool status;
 
-            using (SqlCommand cmd = new SqlCommand(getProduct, conn))
+            using (NpgsqlCommand cmd = new NpgsqlCommand(getProduct, conn))
             {
                 cmd.Parameters.AddWithValue("@ProductID", request.ProductId);
 
-                using SqlDataReader reader = await cmd.ExecuteReaderAsync();
+                using NpgsqlDataReader reader = await cmd.ExecuteReaderAsync();
 
                 if (!await reader.ReadAsync())
                     return "Sản phẩm không tồn tại";
@@ -132,13 +132,13 @@ namespace ShopManagement.Services
                 FROM CartItems 
                 WHERE CartID = @CartID AND ProductID = @ProductID AND Size = @Size";
 
-            using (SqlCommand cmdCheck = new SqlCommand(check, conn))
+            using (NpgsqlCommand cmdCheck = new NpgsqlCommand(check, conn))
             {
                 cmdCheck.Parameters.AddWithValue("@CartID", cartId);
                 cmdCheck.Parameters.AddWithValue("@ProductID", request.ProductId);
                 cmdCheck.Parameters.AddWithValue("@Size", request.Size);
 
-                using SqlDataReader reader = await cmdCheck.ExecuteReaderAsync();
+                using NpgsqlDataReader reader = await cmdCheck.ExecuteReaderAsync();
 
                 if (await reader.ReadAsync())
                 {
@@ -151,7 +151,7 @@ namespace ShopManagement.Services
 
                     string update = "UPDATE CartItems SET Quantity = @Qty WHERE CartItemID = @Id";
 
-                    using SqlCommand cmdUpdate = new SqlCommand(update, conn);
+                    using NpgsqlCommand cmdUpdate = new NpgsqlCommand(update, conn);
                     cmdUpdate.Parameters.AddWithValue("@Qty", oldQty + request.Quantity);
                     cmdUpdate.Parameters.AddWithValue("@Id", id);
 
@@ -166,7 +166,7 @@ namespace ShopManagement.Services
                 INSERT INTO CartItems (CartID, ProductID, Quantity, Size)
                 VALUES (@CartID, @ProductID, @Quantity, @Size)";
 
-            using (SqlCommand cmdInsert = new SqlCommand(insert, conn))
+            using (NpgsqlCommand cmdInsert = new NpgsqlCommand(insert, conn))
             {
                 cmdInsert.Parameters.AddWithValue("@CartID", cartId);
                 cmdInsert.Parameters.AddWithValue("@ProductID", request.ProductId);
@@ -181,7 +181,7 @@ namespace ShopManagement.Services
         // cập nhật số lượng
         public async Task<string> Update(int cartItemId, int quantity)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
 
             string query = @"
@@ -189,7 +189,7 @@ namespace ShopManagement.Services
                 SET Quantity = @Quantity 
                 WHERE CartItemID = @ID";
 
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@Quantity", quantity);
             cmd.Parameters.AddWithValue("@ID", cartItemId);
 
@@ -200,10 +200,10 @@ namespace ShopManagement.Services
         // xóa sản phẩm khỏi giỏ hàng
         public async Task<string> Delete(int cartItemId)
         {
-            using SqlConnection conn = new SqlConnection(_configuration.GetConnectionString("DefaultConnection"));
+            using NpgsqlConnection conn = new NpgsqlConnection(_configuration.GetConnectionString("DefaultConnection"));
             await conn.OpenAsync();
             string query = "DELETE FROM CartItems WHERE CartItemID = @ID";
-            using SqlCommand cmd = new SqlCommand(query, conn);
+            using NpgsqlCommand cmd = new NpgsqlCommand(query, conn);
             cmd.Parameters.AddWithValue("@ID", cartItemId);
 
             await cmd.ExecuteNonQueryAsync();
